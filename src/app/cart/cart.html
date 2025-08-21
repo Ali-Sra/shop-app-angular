@@ -1,0 +1,32 @@
+<h1>Shopping Cart</h1>
+
+<div *ngIf="cart.items().length === 0">
+  <p>Your cart is empty.</p>
+</div>
+
+<div *ngFor="let item of cart.items()" class="cart-item">
+  <div class="meta">
+    <h3>{{ item.product.title }}</h3>
+    <p class="muted">{{ item.product.category }}</p>
+  </div>
+
+  <div class="qty">
+    <button class="btn" (click)="cart.remove(item.product)">-</button>
+    <span>{{ item.quantity }}</span>
+    <button class="btn primary" (click)="cart.add(item.product)">+</button>
+  </div>
+
+  <div class="line-price">
+    {{ (item.product.price * item.quantity) | currency:'EUR' }}
+  </div>
+</div>
+
+<hr />
+
+<p class="total">
+  Total: <strong>{{ cart.total() | currency:'EUR' }}</strong>
+</p>
+
+<div class="actions">
+  <button class="btn" (click)="cart.clear()">Clear Cart</button>
+</div>

@@ -1,13 +1,28 @@
 <h1>Products</h1>
 <input placeholder="Search..." (input)="q.set(($any($event.target).value))" />
+
 <div class="grid">
   @for (p of filtered(); track p.id) {
-    <a class="card" [routerLink]="['/products', p.id]">
+    <div class="card">
+      <img [src]="p.image" alt="{{ p.title }}" class="thumb" />
       <h3>{{ p.title }}</h3>
-      <p class="price">{{ p.price | currency:'EUR':'symbol' }}</p>
+      <p class="price">{{ p.price | currency:'EUR' }}</p>
+
+      @switch (p.category) {
+        @case ('Laptop')    { <span class="badge laptop">Laptop</span> }
+        @case ('Phone')     { <span class="badge phone">Phone</span> }
+        @case ('Accessory') { <span class="badge accessory">Accessory</span> }
+        @case ('Tablet')    { <span class="badge tablet">Tablet</span> }
+      }
+
       @if (p.description) { <p class="desc">{{ p.description }}</p> }
-    </a>
+
+      <div class="actions">
+        <a [routerLink]="['/products', p.id]" class="btn ghost">Details</a>
+        <button class="btn primary" (click)="cart.add(p)">Add to Cart +</button>
+      </div>
+    </div>
   } @empty {
-    <p>No products found.</p>
+    <p class="muted">No products found.</p>
   }
 </div>

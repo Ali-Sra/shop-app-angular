@@ -1,70 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
-/* ---- Base ---- */
-:root{
-  --bg:#f6f7fb;
-  --fg:#1f2937;
-  --muted:#6b7280;
-  --primary:#2563eb;
-  --card:#ffffff;
-  --border:#e5e7eb;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-  color:var(--fg);
-  background:var(--bg);
+.thumb {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
 }
 
-/* ---- Header ---- */
-.app-header{
-  position:sticky; top:0; z-index:10;
-  backdrop-filter:saturate(1.2) blur(4px);
-  background:rgba(255,255,255,0.75);
-  border-bottom:1px solid var(--border);
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
 }
-.app-header .row{
-  max-width:1100px; margin:0 auto; padding:12px 16px;
-  display:flex; align-items:center; justify-content:space-between;
-}
-.brand{font-weight:700; color:var(--fg); text-decoration:none}
-.nav a{
-  color:var(--fg); text-decoration:none; margin-left:14px;
-  padding:6px 10px; border-radius:8px; transition:.15s;
-}
-.nav a:hover{ background:#eef2ff; color:var(--primary) }
+.badge.laptop { background: #e0f2fe; color: #0369a1; }
+.badge.phone { background: #dcfce7; color: #166534; }
+.badge.accessory { background: #fef9c3; color: #854d0e; }
+.badge.tablet { background: #fce7f3; color: #9d174d; }
 
-/* ---- Layout ---- */
-.container{ max-width:1100px; margin:24px auto; padding:0 16px; }
-
-/* ---- Utilities ---- */
-.muted{ color:var(--muted); }
-.btn-link{ color:var(--primary); text-decoration:none; font-weight:600 }
-.btn-link:hover{ text-decoration:underline }
-
-/* ---- Cards Grid (for product list) ---- */
-.grid{
-  display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-  gap:16px; margin-top:16px;
+button {
+  background: #2563eb;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
-.card{
-  background:var(--card); border:1px solid var(--border); border-radius:14px;
-  padding:14px; box-shadow:0 2px 10px rgba(0,0,0,.04);
-  transition:transform .15s ease, box-shadow .15s ease;
-  text-decoration:none; color:inherit; display:block;
-}
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 20px rgba(0,0,0,.08);
-}
-.card h3{ margin:0 0 6px; font-size:1.05rem }
-.price{ font-weight:700; margin:6px 0 }
-.desc{ color:var(--muted); margin:0 }
-
-/* ---- Product detail ---- */
-.detail{
-  background:var(--card); border:1px solid var(--border); border-radius:16px;
-  padding:22px; box-shadow:0 6px 18px rgba(0,0,0,.06);
-  max-width:720px; margin:24px auto;
-}
+button:hover { background: #1d4ed8; }

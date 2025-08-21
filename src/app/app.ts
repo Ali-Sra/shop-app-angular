@@ -1,12 +1,19 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, computed, inject } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { CartService } from './services/cart.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'],
+  imports: [RouterOutlet, RouterLink],
 })
 export class App {
-  protected readonly title = signal('shop-app');
+  cart = inject(CartService);
+
+  // reactive counter that updates when cart items change
+  itemCount = computed(() =>
+    this.cart.items().reduce((sum, i) => sum + i.quantity, 0)
+  );
 }

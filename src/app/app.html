@@ -3,6 +3,9 @@
     <a class="brand" routerLink="/">ShopApp</a>
     <nav class="nav">
       <a routerLink="/products" routerLinkActive="active">Products</a>
+      <a routerLink="/cart" routerLinkActive="active">
+        Cart ({{ itemCount() }})
+      </a>
     </nav>
   </div>
 </header>
