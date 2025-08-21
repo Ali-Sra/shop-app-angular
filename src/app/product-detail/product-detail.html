@@ -1,0 +1,8 @@
+<a routerLink="/products">← Back</a>
+@if (product()) {
+  <h2>{{ product()!.title }}</h2>
+  <p><strong>Price:</strong> {{ product()!.price | currency:'EUR':'symbol' }}</p>
+  @if (product()!.description) { <p>{{ product()!.description }}</p> }
+} @else {
+  <p>Product not found.</p>
+}

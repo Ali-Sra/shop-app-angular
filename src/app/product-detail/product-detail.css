@@ -1,0 +1,38 @@
+.product-detail {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail h2 {
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.product-detail p {
+  font-size: 1rem;
+  color: #444;
+  margin: 0.5rem 0;
+}
+
+.product-detail .price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1976d2;
+  margin: 1rem 0;
+}
+
+.product-detail a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.product-detail a:hover {
+  text-decoration: underline;
+}
