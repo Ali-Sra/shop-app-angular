@@ -1,7 +1,7 @@
-.cart-item{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px;margin:8px 0}
+.cart-item{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;background:#fc4646;border:1px solid #e5e7eb;border-radius:12px;padding:12px;margin:8px 0}
 .qty{display:flex;align-items:center;gap:8px}
 .line-price{font-weight:700}
 .total{font-size:1.1rem}
-.btn{border:1px solid #e5e7eb;padding:.35rem .7rem;border-radius:8px;background:#f8fafc;cursor:pointer}
-.btn.primary{background:#2563eb;color:#fff;border-color:#2563eb}
+.btn{border:1px solid #e5e7eb;padding:.35rem .7rem;border-radius:8px;background:#fc4646;cursor:pointer}
+.btn.primary{background:#2563eb;color:#4680fc;border-color:#2563eb}
 .btn:hover{filter:brightness(.98)}
